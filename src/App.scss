@@ -1,0 +1,13 @@
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Avenir";
+}
+
+Body {
+  min-width: 320px;
+}
