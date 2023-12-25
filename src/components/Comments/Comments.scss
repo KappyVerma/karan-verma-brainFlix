@@ -1,0 +1,55 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comment-section {
+  &__title {
+    @include sub-header;
+    margin-bottom: 1.2em;
+  }
+  &__list {
+    display: flex;
+    border-bottom: 1px solid $secondary-color-mercury;
+    @include body-footer;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-top: 16px;
+    background-color: $secondary-color-mercury;
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__content {
+    width: 82%;
+    margin: 0 0 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em 0;
+
+    @include tablet {
+      width: 95%;
+      padding: 1.8em 0;
+    }
+    @include desktop {
+      padding-right: 24px;
+    }
+  }
+
+  &__item {
+    width: 50%;
+    &--cmt {
+      width: 100%;
+      padding-top: 1em;
+    }
+    &--tym {
+      text-align: right;
+      color: $primary-color-silver;
+    }
+  }
+}

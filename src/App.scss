@@ -1,0 +1,36 @@
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Avenir";
+}
+
+Body {
+  min-width: 320px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.main-section {
+  padding: 24px 16px 16px;
+  @include tablet {
+    padding: 24px 36px;
+  }
+  @include desktop {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding: 0;
+  }
+  &__divider {
+    @include desktop {
+      border-right: 1px solid $secondary-color-mercury;
+      margin-right: 24px;
+    }
+  }
+}

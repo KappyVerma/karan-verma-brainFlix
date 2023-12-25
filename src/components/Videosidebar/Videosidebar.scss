@@ -1,0 +1,41 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video-sidebar {
+  @include body-footer;
+
+  &__header {
+    @include sub-header;
+    color: $primary-color-silver;
+    margin: 1em 0;
+    @include desktop {
+      padding-top: 24px;
+      margin-top: 0;
+    }
+  }
+  &__item {
+    display: flex;
+    margin-bottom: 1em;
+    &:last-child {
+      margin-bottom: auto;
+    }
+  }
+  &__link {
+    width: 110px;
+    height: 60px;
+    border-radius: 4px;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  &__detail {
+    width: 164px;
+    height: 60px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    margin-bottom: auto;
+  }
+}

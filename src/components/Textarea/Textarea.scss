@@ -1,0 +1,81 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.textarea {
+  display: flex;
+  border-bottom: 1px solid $secondary-color-mercury;
+  padding-bottom: 1em;
+  @include tablet {
+    padding-bottom: 1.5em;
+  }
+  &__img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1.4em 1em 0 0;
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__container {
+    width: 100%;
+  }
+
+  &__content {
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+    }
+  }
+  &__title {
+    color: $primary-color-silver;
+    @include sub-header;
+  }
+  &__comments {
+    width: 100%;
+    height: 8em;
+    padding: 10px;
+    margin: 5px 0 12px;
+    background-color: $secondary-color-alabaster;
+    border: 1px solid $secondary-color-mercury;
+    border-radius: 4px;
+    color: $primary-color-black;
+
+    &::placeholder {
+      color: $primary-color-black;
+      @include body-footer;
+    }
+    @include tablet {
+      height: 40px;
+      margin: 0;
+    }
+  }
+  &__button {
+    display: inline;
+    text-transform: uppercase;
+    width: 100%;
+    height: 40px;
+    background-image: url("../../assets/Icons/add_comment.svg");
+    background-position: 10px;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+
+    @include label-button;
+    background-color: $primary-color-blue;
+    color: $primary-color-white;
+    border: none;
+    border-radius: 4px;
+    @include tablet {
+      max-width: 150px;
+      padding: 0 32px;
+      margin-left: 16px;
+      @include dt-label-buttons;
+    }
+    @include desktop {
+      margin-right: 24px;
+    }
+  }
+}

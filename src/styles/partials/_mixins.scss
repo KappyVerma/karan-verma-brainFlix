@@ -1,0 +1,71 @@
+@use "../partials/variables" as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+//MOBILE TEXT STYLES
+
+@mixin header-page {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+@mixin header-section {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+@mixin sub-header {
+  font-size: 0.82rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+}
+@mixin body-footer {
+  font-size: 0.82rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+@mixin label-button {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+//TABLET/DESKTOP TEXT STYLES
+
+@mixin dt-header-page {
+  font-size: 2.1rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+}
+@mixin dt-header-section {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+@mixin dt-sub-header {
+  font-size: 0.9rem;
+  line-height: 1.375rem;
+  font-weight: 700;
+}
+@mixin dt-body {
+  font-size: 0.9rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+@mixin dt-label-buttons {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}

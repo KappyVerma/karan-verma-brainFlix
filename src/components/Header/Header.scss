@@ -1,0 +1,106 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  padding: 0 1em;
+  position: relative;
+  margin: 0 auto;
+  @include tablet {
+    padding: 0.5em 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include desktop {
+    width: 85%;
+  }
+
+  &__logo {
+    background-image: url("../../assets/Logo/BrainFlix-logo.svg");
+    height: 25px;
+    width: 120px;
+    margin: 1em auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include tablet {
+      margin-left: 0;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__input {
+    height: 36px;
+    min-width: 240px;
+    padding: 0.75em;
+    padding-left: 2rem;
+    margin-right: 3rem;
+    border: 1px solid $secondary-color-mercury;
+    border-radius: 4px;
+    background-image: url("../../assets/Icons/search.svg");
+    background-repeat: no-repeat;
+    background-size: 0.9rem;
+    background-position: 10px;
+    background-color: $secondary-color-alabaster;
+    @include tablet {
+      height: 40px;
+      margin-right: auto;
+    }
+    &::placeholder {
+      color: $primary-color-black;
+      @include label-button;
+      @include tablet {
+        @include dt-label-buttons;
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    text-transform: uppercase;
+    width: auto;
+    height: 40px;
+    margin: 1.55em 0;
+    background-image: url("../../assets/Icons/upload.svg");
+    background-position: 10px;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+
+    @include label-button;
+    background-color: $primary-color-blue;
+    color: $primary-color-white;
+    border: none;
+    border-radius: 4px;
+    @include tablet {
+      width: 150px;
+      padding: 0 32px;
+      margin: 0 1.75em;
+      @include dt-label-buttons;
+    }
+    @include desktop {
+      margin-right: 3em;
+    }
+  }
+  &__image {
+    height: 2.25em;
+    width: 2.25em;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 1em;
+    top: 2.6em;
+    @include tablet {
+      position: static;
+      width: 2.5em;
+      height: 2.5em;
+    }
+  }
+}
