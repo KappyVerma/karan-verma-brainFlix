@@ -12,12 +12,15 @@ function App() {
   // avatar for header
   const avatar = Mohan;
   // video for header
-  const [SideBar] = useState(Videos);
-  const [video, setVideo] = useState(SideBar[0]);
+  const [SideBar, setSideBar] = useState(Videos.slice(1));
+  const [video, setVideo] = useState(Videos[0]);
 
   const clickHandler = (id) => {
     const selectedVideo = SideBar.find((vids) => vids.id === id);
     setVideo(selectedVideo);
+
+    const updateSideBar = Videos.filter((v) => v.id !== selectedVideo.id);
+    setSideBar(updateSideBar);
   };
 
   const formatTimeStamp = (timestamp) => {
