@@ -19,6 +19,9 @@
     &:last-child {
       margin-bottom: auto;
     }
+    @include desktop {
+      margin-bottom: 1.6em;
+    }
   }
   &__link {
     width: 110px;

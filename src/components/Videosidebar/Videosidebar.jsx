@@ -1,4 +1,4 @@
-import "./Videosidebar.scss";
+import "./VideoSideBar.scss";
 
 export default function VideoSideBar(props) {
   return (

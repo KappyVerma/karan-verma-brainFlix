@@ -6,7 +6,7 @@
   position: relative;
   margin: 0 auto;
   @include tablet {
-    padding: 0.5em 36px;
+    padding: 0.5em 2.25em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,8 +17,8 @@
 
   &__logo {
     background-image: url("../../assets/Logo/BrainFlix-logo.svg");
-    height: 25px;
-    width: 120px;
+    height: 1.6rem;
+    width: 7.5rem;
     margin: 1em auto;
     background-position: center;
     background-size: cover;
@@ -28,7 +28,7 @@
     }
   }
 
-  &__form {
+  &__nav {
     display: flex;
     flex-direction: column;
     @include tablet {
@@ -37,7 +37,7 @@
     }
   }
   &__input {
-    height: 36px;
+    height: 2.25rem;
     min-width: 240px;
     padding: 0.75em;
     padding-left: 2rem;
@@ -47,10 +47,10 @@
     background-image: url("../../assets/Icons/search.svg");
     background-repeat: no-repeat;
     background-size: 0.9rem;
-    background-position: 10px;
+    background-position: 0.63rem;
     background-color: $secondary-color-alabaster;
     @include tablet {
-      height: 40px;
+      height: 2.5rem;
       margin-right: auto;
     }
     &::placeholder {
@@ -66,10 +66,10 @@
     display: block;
     text-transform: uppercase;
     width: auto;
-    height: 40px;
+    height: 2.5rem;
     margin: 1.55em 0;
     background-image: url("../../assets/Icons/upload.svg");
-    background-position: 10px;
+    background-position: 0.63rem;
     background-repeat: no-repeat;
     background-size: 1rem;
 
@@ -79,16 +79,13 @@
     border: none;
     border-radius: 4px;
     @include tablet {
-      width: 150px;
-      padding: 0 32px;
+      width: 9.4rem;
+      padding: 0 2rem;
       margin: 0 1.75em;
       @include dt-label-buttons;
     }
-    @include desktop {
-      margin-right: 3em;
-    }
   }
-  &__image {
+  &__avatar {
     height: 2.25em;
     width: 2.25em;
     object-fit: cover;
@@ -99,6 +96,7 @@
     top: 2.6em;
     @include tablet {
       position: static;
+      vertical-align: middle;
       width: 2.5em;
       height: 2.5em;
     }

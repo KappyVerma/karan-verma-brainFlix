@@ -1,33 +1,41 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.video-detail {
+.banner-info {
   &__title {
     border-bottom: 1px solid $secondary-color-mercury;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
     @include header-page;
+
     @include tablet {
       border-bottom: none;
       padding-bottom: 0;
       @include dt-header-page;
     }
+
     @include desktop {
-      padding-top: 24px;
+      padding-top: 1.5rem;
     }
   }
 
-  &__block {
+  &__container {
     @include body-footer;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid $secondary-color-mercury;
+
     @include desktop {
-      padding-right: 24px;
+      padding-right: 1.5rem;
     }
   }
+
   &__list {
-    padding-top: 16px;
-    margin-right: 4em;
+    padding-top: 1.22em;
+
+    &:nth-child(2) {
+      margin-right: 4em;
+    }
+
     @include tablet {
       @include dt-body;
       display: flex;
@@ -37,27 +45,29 @@
   }
 
   &__item {
-    padding-bottom: 16px;
+    padding-bottom: 1.22em;
     color: $primary-color-silver;
 
     &--bold {
       color: $primary-color-black;
+
       @include tablet {
-        margin-right: 25px;
+        margin-right: 1.55rem;
       }
     }
 
-    &--eye {
+    &--views {
       background-image: url("../../assets/Icons/views.svg");
       background-repeat: no-repeat;
       background-position: 0 3px;
       padding-left: 2.5em;
+
       @include tablet {
-        margin-right: 25px;
+        margin-right: 1.55rem;
       }
     }
 
-    &--heart {
+    &--likes {
       background-image: url("../../assets/Icons/likes.svg");
       background-repeat: no-repeat;
       background-position: 0 3px;
@@ -67,13 +77,15 @@
 
   &__description {
     font-size: 0.82rem;
-    padding: 16px 0;
+    padding-bottom: 1.22em;
+
     @include tablet {
       @include dt-body;
     }
+
     @include desktop {
-      padding-right: 24px;
-      margin-bottom: 26px;
+      padding-right: 1.5em;
+      margin-bottom: 1.75em;
     }
   }
 }

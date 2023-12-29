@@ -1,17 +1,19 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.video-block {
+.banner {
   background-color: $secondary-color-darkBlack;
+
   @include tablet {
-    padding: 0 36px;
+    padding: 0 2.25em;
   }
+
   @include desktop {
-    padding: 0 210px;
+    padding: 0 12em;
   }
 }
 
-.video-block__link {
+.banner__item {
   width: 100%;
   aspect-ratio: 16/9;
   vertical-align: middle;

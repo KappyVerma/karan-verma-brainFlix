@@ -1,26 +1,25 @@
-import "./App.scss";
 import { useState } from "react";
-import Header from "./components/Header/Header";
-import VideoBlock from "./components/Content/Content.jsx";
-import Mohan from "./assets/Images/Mohan-muruge.jpg";
+import "./App.scss";
+import avatar from "./assets/Images/Mohan-muruge.jpg";
 import Videos from "./data/video-details.json";
-import VideoDetails from "./components/Video-details/videoDetails.jsx";
-import VideoSideBar from "./components/Videosidebar/Videosidebar.jsx";
-import Comments from "./components/Comments/Comments.jsx";
+import Header from "./components/Header/Header";
+import BannerVideo from "./components/BannerVideo/BannerVideo";
+import BannerVideoInfo from "./components/BannerVideoInfo/BannerVideoInfo";
+import VideoSideBar from "./components/VideoSideBar/VideoSideBar";
+import CommentSection from "./components/CommentSection/CommentSection";
 
 function App() {
-  // avatar for header
-  const avatar = Mohan;
-  // video for header
-  const [SideBar, setSideBar] = useState(Videos.slice(1));
-  const [video, setVideo] = useState(Videos[0]);
+  const [sideBarVideos, setSideBarVideos] = useState(Videos.slice(1));
+  const [topBannerVideo, setTopBannerVideo] = useState(Videos[0]);
 
   const clickHandler = (id) => {
-    const selectedVideo = SideBar.find((vids) => vids.id === id);
-    setVideo(selectedVideo);
+    const selectedVideo = sideBarVideos.find((vids) => vids.id === id);
+    setTopBannerVideo(selectedVideo);
 
-    const updateSideBar = Videos.filter((v) => v.id !== selectedVideo.id);
-    setSideBar(updateSideBar);
+    const updateSideBarVideos = Videos.filter(
+      (vids) => vids.id !== selectedVideo.id
+    );
+    setSideBarVideos(updateSideBarVideos);
   };
 
   const formatTimeStamp = (timestamp) => {
@@ -32,19 +31,20 @@ function App() {
   return (
     <div>
       <Header avatar={avatar} />
-      <main className="main">
-        <VideoBlock video={video} />
-        <section className="main-section">
-          <div className="main-section__divider">
-            <VideoDetails video={video} formatTimeStamp={formatTimeStamp} />
-            <Comments
-              video={video}
-              formatTimeStamp={formatTimeStamp}
-              avatar={avatar}
-            />
-          </div>
-          <VideoSideBar SideBar={SideBar} clickHandler={clickHandler} />
-        </section>
+      <BannerVideo topBannerVideo={topBannerVideo} />
+      <main className="main-content">
+        <div className="main-content__divider">
+          <BannerVideoInfo
+            video={topBannerVideo}
+            formatTimeStamp={formatTimeStamp}
+          />
+          <CommentSection
+            video={topBannerVideo}
+            formatTimeStamp={formatTimeStamp}
+            avatar={avatar}
+          />
+        </div>
+        <VideoSideBar SideBar={sideBarVideos} clickHandler={clickHandler} />
       </main>
     </div>
   );

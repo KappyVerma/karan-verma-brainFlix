@@ -10,27 +10,31 @@
 
 Body {
   min-width: 320px;
+  color: $primary-color-black;
 }
 
 li {
   list-style-type: none;
 }
 
-.main-section {
-  padding: 24px 16px 16px;
+.main-content {
+  padding: 1.5em 1em 1em;
+
   @include tablet {
-    padding: 24px 36px;
+    padding: 1.5em 2.25em;
   }
+
   @include desktop {
     display: flex;
     width: 80%;
     margin: auto;
     padding: 0;
   }
+
   &__divider {
     @include desktop {
       border-right: 1px solid $secondary-color-mercury;
-      margin-right: 24px;
+      margin-right: 1.5em;
     }
   }
 }

@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.textarea {
+.comment-box {
   display: flex;
   border-bottom: 1px solid $secondary-color-mercury;
   padding-bottom: 1em;
@@ -9,14 +9,14 @@
     padding-bottom: 1.5em;
   }
   &__img {
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     object-fit: cover;
     margin: 1.4em 1em 0 0;
     @include tablet {
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
   &__container {
@@ -37,6 +37,8 @@
   &__comments {
     width: 100%;
     height: 8em;
+    resize: none;
+    overflow: hidden;
     padding: 10px;
     margin: 5px 0 12px;
     background-color: $secondary-color-alabaster;
@@ -49,7 +51,7 @@
       @include body-footer;
     }
     @include tablet {
-      height: 40px;
+      height: 2.5rem;
       margin: 0;
     }
   }
@@ -57,7 +59,7 @@
     display: inline;
     text-transform: uppercase;
     width: 100%;
-    height: 40px;
+    height: 2.5rem;
     background-image: url("../../assets/Icons/add_comment.svg");
     background-position: 10px;
     background-repeat: no-repeat;
@@ -70,12 +72,12 @@
     border-radius: 4px;
     @include tablet {
       max-width: 150px;
-      padding: 0 32px;
-      margin-left: 16px;
+      padding: 0 2rem;
+      margin-left: 1rem;
       @include dt-label-buttons;
     }
     @include desktop {
-      margin-right: 24px;
+      margin-right: 1.5rem;
     }
   }
 }
