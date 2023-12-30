@@ -2,43 +2,71 @@
 @use "../../styles/partials/variables" as *;
 
 .video-sidebar {
-  @include body-footer;
+  @include desktop {
+    padding-bottom: 4em;
+  }
 
   &__header {
-    @include sub-header;
+    @include header-section;
     color: $primary-color-silver;
-    margin: 1em 0;
+    margin: 1.5em 0;
+
+    @include tablet {
+      @include dt-header-section;
+      margin: 1.75em 0;
+    }
+
     @include desktop {
-      padding-top: 24px;
+      padding-top: 2.75em;
       margin-top: 0;
     }
   }
+
   &__item {
     display: flex;
-    margin-bottom: 1em;
+    margin-bottom: 0.7em;
+    height: 3.75em;
+
     &:last-child {
       margin-bottom: auto;
     }
-    @include desktop {
-      margin-bottom: 1.6em;
+
+    @include tablet {
+      height: 4.38em;
+      margin-bottom: 1.4em;
     }
   }
+
   &__link {
-    width: 110px;
-    height: 60px;
+    width: 6.25em;
+    height: 100%;
     border-radius: 4px;
     object-position: center;
     object-fit: cover;
+
+    @include tablet {
+      width: 7em;
+    }
   }
 
   &__detail {
-    width: 164px;
-    height: 60px;
-    margin-left: 16px;
+    @include body-footer;
+    width: 14em;
+    margin-left: 1.1em;
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      @include dt-body;
+      width: 13em;
+    }
   }
+
   &__title {
     margin-bottom: auto;
+
+    @include tablet {
+      margin-bottom: auto;
+    }
   }
 }

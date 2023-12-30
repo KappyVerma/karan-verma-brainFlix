@@ -4,17 +4,18 @@
 .banner-info {
   &__title {
     border-bottom: 1px solid $secondary-color-mercury;
-    padding-bottom: 1rem;
+    padding-bottom: 1em;
     @include header-page;
 
     @include tablet {
       border-bottom: none;
       padding-bottom: 0;
       @include dt-header-page;
+      font-weight: 900;
     }
 
     @include desktop {
-      padding-top: 1.5rem;
+      padding-top: 1em;
     }
   }
 
@@ -30,17 +31,26 @@
   }
 
   &__list {
-    padding-top: 1.22em;
+    padding-top: 1em;
 
     &:nth-child(2) {
       margin-right: 4em;
+
+      @include tablet {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      @include desktop {
+        padding-bottom: 0;
+      }
     }
 
     @include tablet {
-      @include dt-body;
+      padding-bottom: 1em;
       display: flex;
       align-items: center;
-      margin-right: 0;
     }
   }
 
@@ -48,30 +58,36 @@
     padding-bottom: 1.22em;
     color: $primary-color-silver;
 
+    @include tablet {
+      padding-bottom: 0;
+    }
+
     &--bold {
       color: $primary-color-black;
 
       @include tablet {
-        margin-right: 1.55rem;
+        @include dt-body;
+        font-weight: 900;
+        margin-right: 2rem;
       }
     }
 
     &--views {
       background-image: url("../../assets/Icons/views.svg");
-      background-repeat: no-repeat;
-      background-position: 0 3px;
-      padding-left: 2.5em;
+
+      @include modifications;
+      background-size: 1.7em;
 
       @include tablet {
         margin-right: 1.55rem;
+        padding-left: 2.25em;
       }
     }
 
     &--likes {
       background-image: url("../../assets/Icons/likes.svg");
-      background-repeat: no-repeat;
-      background-position: 0 3px;
-      padding-left: 2.5em;
+
+      @include modifications;
     }
   }
 
@@ -81,6 +97,7 @@
 
     @include tablet {
       @include dt-body;
+      padding: 0.8em 0;
     }
 
     @include desktop {

@@ -2,5 +2,10 @@
 
 .comment-section__title {
   @include sub-header;
-  margin-bottom: 1.2em;
+  margin: 0.6em 0 1.2em;
+  @include tablet {
+    margin-bottom: 1.1em;
+    @include dt-sub-header;
+    font-weight: 900;
+  }
 }

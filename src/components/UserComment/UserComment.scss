@@ -7,38 +7,49 @@
     border-bottom: 1px solid $secondary-color-mercury;
     @include body-footer;
 
-    &:last-child {
-      border-bottom: none;
+    @include tablet {
+      @include dt-body;
+    }
+
+    @include desktop {
+      padding-left: 0.91em;
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 
   &__avatar {
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
-    margin-top: 16px;
+    margin-top: 1em;
     background-color: $secondary-color-mercury;
 
     @include tablet {
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-top: 1.8em;
     }
   }
 
   &__content {
     width: 82%;
-    margin: 0 0 0 16px;
+    margin-left: 1.2em;
     display: flex;
     flex-wrap: wrap;
     padding: 1em 0;
 
     @include tablet {
       width: 95%;
-      padding: 1.8em 0;
+      padding: 1.8em 0 1.8em 1.5em;
+      margin-left: 0;
     }
 
     @include desktop {
-      padding-right: 24px;
+      padding-right: 1.7em;
+      padding-left: 2.2em;
     }
   }
 
@@ -47,7 +58,7 @@
 
     &--cmt {
       width: 100%;
-      padding-top: 1em;
+      padding-top: 0.5em;
     }
 
     &--time {

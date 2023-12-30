@@ -1,6 +1,6 @@
 import "./CreateComment.scss";
 
-function CreateComment(props) {
+export default function CreateComment(props) {
   return (
     <section className="comment-box">
       <div className="comment-box__avatar">
@@ -10,7 +10,6 @@ function CreateComment(props) {
           alt="Mohan-Murge"
         />
       </div>
-
       <div className="comment-box__container">
         <h4 className="comment-box__title">{props.title}</h4>
         <form className="comment-box__content">
@@ -25,5 +24,3 @@ function CreateComment(props) {
     </section>
   );
 }
-
-export default CreateComment;

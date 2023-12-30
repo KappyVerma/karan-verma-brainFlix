@@ -5,14 +5,17 @@
   padding: 0 1em;
   position: relative;
   margin: 0 auto;
+
   @include tablet {
     padding: 0.5em 2.25em;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   @include desktop {
-    width: 85%;
+    padding: 0.5em 0;
+    width: 80%;
   }
 
   &__logo {
@@ -21,8 +24,8 @@
     width: 7.5rem;
     margin: 1em auto;
     background-position: center;
-    background-size: cover;
     background-repeat: no-repeat;
+
     @include tablet {
       margin-left: 0;
     }
@@ -31,33 +34,40 @@
   &__nav {
     display: flex;
     flex-direction: column;
+
     @include tablet {
       flex-direction: row;
-      align-items: center;
     }
   }
+
   &__input {
     height: 2.25rem;
     min-width: 240px;
     padding: 0.75em;
-    padding-left: 2rem;
-    margin-right: 3rem;
+    padding-left: 2.75em;
+    margin-right: 4em;
     border: 1px solid $secondary-color-mercury;
     border-radius: 4px;
     background-image: url("../../assets/Icons/search.svg");
     background-repeat: no-repeat;
-    background-size: 0.9rem;
-    background-position: 0.63rem;
+    background-size: 1.25em;
+    background-position: 0.9em;
     background-color: $secondary-color-alabaster;
+
     @include tablet {
       height: 2.5rem;
       margin-right: auto;
+      background-size: 1.5em;
     }
+
     &::placeholder {
       color: $primary-color-black;
       @include label-button;
+      font-weight: 500;
+
       @include tablet {
         @include dt-label-buttons;
+        font-weight: 500;
       }
     }
   }
@@ -69,22 +79,33 @@
     height: 2.5rem;
     margin: 1.55em 0;
     background-image: url("../../assets/Icons/upload.svg");
-    background-position: 0.63rem;
+    background-position: 0.75em;
     background-repeat: no-repeat;
-    background-size: 1rem;
+    background-size: 1.7em;
 
     @include label-button;
     background-color: $primary-color-blue;
     color: $primary-color-white;
     border: none;
     border-radius: 4px;
+    transition: 0.25s;
+
+    &:hover {
+      background-color: $secondary-color-darkBlue;
+    }
+
     @include tablet {
       width: 9.4rem;
       padding: 0 2rem;
       margin: 0 1.75em;
       @include dt-label-buttons;
     }
+
+    @include desktop {
+      margin: 0 3.5em 0 2em;
+    }
   }
+
   &__avatar {
     height: 2.25em;
     width: 2.25em;
@@ -94,6 +115,7 @@
     position: absolute;
     right: 1em;
     top: 2.6em;
+
     @include tablet {
       position: static;
       vertical-align: middle;
