@@ -1,6 +1,6 @@
 import "./BannerVideo.scss";
 
-export default function BannerVideo(props) {
+function BannerVideo(props) {
   const poster = props.topBannerVideo.image;
   return (
     <div className="banner">
@@ -8,3 +8,5 @@ export default function BannerVideo(props) {
     </div>
   );
 }
+
+export default BannerVideo;

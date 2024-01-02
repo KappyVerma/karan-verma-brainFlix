@@ -1,6 +1,6 @@
 import "./CreateComment.scss";
 
-export default function CreateComment(props) {
+function CreateComment(props) {
   return (
     <section className="comment-box">
       <div className="comment-box__avatar">
@@ -24,3 +24,5 @@ export default function CreateComment(props) {
     </section>
   );
 }
+
+export default CreateComment;

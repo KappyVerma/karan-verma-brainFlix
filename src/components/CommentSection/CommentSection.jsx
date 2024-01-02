@@ -2,7 +2,7 @@ import "./CommentSection.scss";
 import CreateComment from "../CreateComment/CreateComment";
 import UserComments from "../UserComment/UserComment";
 
-export default function CommentSection({ video, formatTimeStamp, avatar }) {
+function CommentSection({ video, formatTimeStamp, avatar }) {
   return (
     <div className="comment-section">
       <h3 className="comment-section__title">
@@ -17,3 +17,5 @@ export default function CommentSection({ video, formatTimeStamp, avatar }) {
     </div>
   );
 }
+
+export default CommentSection;

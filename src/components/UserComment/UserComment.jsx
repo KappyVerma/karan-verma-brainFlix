@@ -1,6 +1,6 @@
 import "./UserComment.scss";
 
-export default function UserComments({ video, formatTimeStamp }) {
+function UserComments({ video, formatTimeStamp }) {
   return (
     <ul className="comment-section__comments">
       {video.comments.map((comment) => (
@@ -20,3 +20,5 @@ export default function UserComments({ video, formatTimeStamp }) {
     </ul>
   );
 }
+
+export default UserComments;

@@ -1,6 +1,6 @@
 import "../Header/Header.scss";
 
-export default function Header(props) {
+function Header(props) {
   return (
     <header className="header">
       <div className="header__logo"></div>
@@ -12,3 +12,5 @@ export default function Header(props) {
     </header>
   );
 }
+
+export default Header;

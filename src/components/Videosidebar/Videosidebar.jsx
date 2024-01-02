@@ -1,6 +1,6 @@
 import "./VideoSideBar.scss";
 
-export default function VideoSideBar(props) {
+function VideoSideBar(props) {
   return (
     <div className="video-sidebar">
       <h3 className="video-sidebar__header">NEXT VIDEOS</h3>
@@ -24,3 +24,4 @@ export default function VideoSideBar(props) {
     </div>
   );
 }
+export default VideoSideBar;

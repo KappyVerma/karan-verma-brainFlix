@@ -1,6 +1,6 @@
 import "./BannerVideoInfo.scss";
 
-export default function BannerVideoInfo(props) {
+function BannerVideoInfo(props) {
   return (
     <section className="banner-info">
       <h1 className="banner-info__title">{props.video.title}</h1>
@@ -28,3 +28,5 @@ export default function BannerVideoInfo(props) {
     </section>
   );
 }
+
+export default BannerVideoInfo;
