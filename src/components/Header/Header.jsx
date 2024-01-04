@@ -1,12 +1,15 @@
-import "../Header/Header.scss";
+import { NavLink } from "react-router-dom";
+import "./Header.scss";
 
 function Header(props) {
   return (
     <header className="header">
-      <div className="header__logo"></div>
+      <NavLink to="/" className="header__logo"></NavLink>
       <nav className="header__nav">
         <input type="text" className="header__input" placeholder="Search" />
-        <button className="header__button">upload</button>
+        <NavLink to="/videoupload" className="header__button">
+          upload
+        </NavLink>
       </nav>
       <img className="header__avatar" src={props.avatar} alt="mohan-murge" />
     </header>

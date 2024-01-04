@@ -16,25 +16,3 @@ Body {
 li {
   list-style-type: none;
 }
-
-.main-content {
-  padding: 1.5em 1em 1em;
-
-  @include tablet {
-    padding: 1.5em 2.25em 2.25em;
-  }
-
-  @include desktop {
-    display: flex;
-    width: 80%;
-    margin: auto;
-    padding: 0;
-  }
-
-  &__divider {
-    @include desktop {
-      border-right: 1px solid $secondary-color-mercury;
-      margin-right: 1.5em;
-    }
-  }
-}

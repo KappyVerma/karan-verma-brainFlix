@@ -1,52 +1,19 @@
-import { useState } from "react";
 import "./App.scss";
 import avatar from "./assets/Images/Mohan-muruge.jpg";
-import Videos from "./data/video-details.json";
 import Header from "./components/Header/Header";
-import BannerVideo from "./components/BannerVideo/BannerVideo";
-import BannerVideoInfo from "./components/BannerVideoInfo/BannerVideoInfo";
-import VideoSideBar from "./components/VideoSideBar/VideoSideBar";
-import CommentSection from "./components/CommentSection/CommentSection";
+import HomePage from "./pages/HomePage/HomePage";
+import VideoUpload from "./pages/VideoUpload/VideoUpload";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [sideBarVideos, setSideBarVideos] = useState(Videos.slice(1));
-  const [topBannerVideo, setTopBannerVideo] = useState(Videos[0]);
-
-  const clickHandler = (id) => {
-    const selectedVideo = sideBarVideos.find((vids) => vids.id === id);
-    setTopBannerVideo(selectedVideo);
-
-    const updateSideBarVideos = Videos.filter(
-      (vids) => vids.id !== selectedVideo.id
-    );
-    setSideBarVideos(updateSideBarVideos);
-  };
-
-  const formatTimeStamp = (timestamp) => {
-    const date = new Date(timestamp);
-    const formattedTimeStamp = date.toLocaleDateString();
-    return formattedTimeStamp;
-  };
-
   return (
-    <div>
+    <BrowserRouter>
       <Header avatar={avatar} />
-      <BannerVideo topBannerVideo={topBannerVideo} />
-      <main className="main-content">
-        <div className="main-content__divider">
-          <BannerVideoInfo
-            video={topBannerVideo}
-            formatTimeStamp={formatTimeStamp}
-          />
-          <CommentSection
-            video={topBannerVideo}
-            formatTimeStamp={formatTimeStamp}
-            avatar={avatar}
-          />
-        </div>
-        <VideoSideBar SideBar={sideBarVideos} clickHandler={clickHandler} />
-      </main>
-    </div>
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/videoupload" element={<VideoUpload />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

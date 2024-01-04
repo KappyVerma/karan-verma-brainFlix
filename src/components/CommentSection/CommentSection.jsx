@@ -19,5 +19,3 @@ function CommentSection({ video, formatTimeStamp, avatar }) {
 }
 
 export default CommentSection;
-
-testing;

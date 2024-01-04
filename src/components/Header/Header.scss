@@ -23,6 +23,7 @@
     height: 1.6rem;
     width: 7.5rem;
     margin: 1em auto;
+    display: block;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -73,7 +74,9 @@
   }
 
   &__button {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     width: auto;
     height: 2.5rem;
@@ -82,6 +85,7 @@
     background-position: 0.75em;
     background-repeat: no-repeat;
     background-size: 1.7em;
+    text-decoration: none;
 
     @include label-button;
     background-color: $primary-color-blue;
