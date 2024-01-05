@@ -1,7 +1,7 @@
 import "./BannerVideo.scss";
 
-function BannerVideo(props) {
-  const poster = props.topBannerVideo.image;
+function BannerVideo({ bannerVideo }) {
+  const poster = bannerVideo.image;
   return (
     <div className="banner">
       <video className="banner__item" controls poster={poster}></video>

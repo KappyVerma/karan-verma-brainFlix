@@ -1,29 +1,29 @@
 import "./BannerVideoInfo.scss";
 
-function BannerVideoInfo(props) {
+function BannerVideoInfo({ bannerVideo, formatTimeStamp }) {
   return (
     <section className="banner-info">
-      <h1 className="banner-info__title">{props.video.title}</h1>
+      <h1 className="banner-info__title">{bannerVideo.title}</h1>
       <div className="banner-info__container">
         <div className="banner-info__list">
           <h4 className="banner-info__item banner-info__item--bold">
-            By {props.video.channel}
+            By {bannerVideo.channel}
           </h4>
           <p className="banner-info__item">
-            {props.formatTimeStamp(props.video.timestamp)}
+            {formatTimeStamp(bannerVideo.timestamp)}
           </p>
         </div>
         <div className="banner-info__list">
           <p className="banner-info__item banner-info__item--views ">
-            {props.video.views}
+            {bannerVideo.views}
           </p>
           <p className="banner-info__item banner-info__item--likes">
-            {props.video.likes}
+            {bannerVideo.likes}
           </p>
         </div>
       </div>
       <div className="banner-info__list">
-        <p className="banner-info__description">{props.video.description}</p>
+        <p className="banner-info__description">{bannerVideo.description}</p>
       </div>
     </section>
   );

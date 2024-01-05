@@ -1,9 +1,9 @@
 import "./UserComment.scss";
 
-function UserComments({ video, formatTimeStamp }) {
+function UserComments({ selectedVideo, formatTimeStamp }) {
   return (
     <ul className="comment-section__comments">
-      {video.comments.map((comment) => (
+      {selectedVideo.comments?.map((comment) => (
         <li className="comment-section__list" key={comment.id}>
           <div className="comment-section__avatar"></div>
           <div className="comment-section__content">

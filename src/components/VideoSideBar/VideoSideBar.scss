@@ -70,3 +70,9 @@
     }
   }
 }
+
+.list {
+  display: inline-flex;
+  text-decoration: none;
+  color: $primary-color-black;
+}
