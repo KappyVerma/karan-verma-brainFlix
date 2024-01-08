@@ -11,6 +11,7 @@ function CommentSection({ bannerVideo, formatTimeStamp, avatar }) {
       <CreateComment
         title="JOIN THE CONVERSATION"
         btn="COMMENT"
+        placeholder="Add a new comment"
         avatar={avatar}
       />
       <UserComments

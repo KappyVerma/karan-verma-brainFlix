@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import FormatTimeStamp from "../../utils/utils";
+import FormatTimeStamp, { api_key, url } from "../../utils";
 import "./HomePage.scss";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import BannerVideo from "../../components/BannerVideo/BannerVideo";
@@ -14,12 +14,11 @@ function HomePage() {
   const [bannerVideo, setBannerVideo] = useState({});
 
   const params = useParams();
-  const url = "https://project-2-api.herokuapp.com/";
 
+  // ---------------VIDEODATA FOR SIDEBAR---------------
   useEffect(() => {
     const getVideoData = async () => {
       try {
-        const api_key = "a562832577e84e91a08cc270635e214f";
         const response = await axios.get(`${url}videos/?api_key=${api_key}`);
         setSideBarVideo(response.data);
       } catch (error) {
@@ -29,22 +28,26 @@ function HomePage() {
     getVideoData();
   }, []);
 
+  // ---------------VIDEODATA FOR BANNER---------------
   useEffect(() => {
-    const defaultVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
-    const selectedVideoId = params.id || defaultVideoId;
-
-    const getSelectedVideo = async (videoId) => {
-      try {
-        const api_key = "a562832577e84e91a08cc270635e214f";
+    const getSelectedVideo = async () => {
+      if (!params.id) {
         const response = await axios.get(
-          `${url}videos/${videoId}?api_key=${api_key}`
+          `${url}videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${api_key}`
         );
         setBannerVideo(response.data);
-      } catch (error) {
-        console.log("THERE IS AN ERROR!!", error);
+      } else {
+        try {
+          const response = await axios.get(
+            `${url}videos/${params.id}?api_key=${api_key}`
+          );
+          setBannerVideo(response.data);
+        } catch (error) {
+          console.log("THERE IS AN ERROR!!", error);
+        }
       }
     };
-    getSelectedVideo(selectedVideoId);
+    getSelectedVideo();
   }, [params.id]);
 
   return (

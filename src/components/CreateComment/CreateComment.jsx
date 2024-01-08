@@ -16,7 +16,7 @@ function CreateComment(props) {
           <textarea
             name="comments"
             className="comment-box__comments"
-            placeholder="Add a new comment"
+            placeholder={props.placeholder}
           />
           <button className="comment-box__button">{props.btn}</button>
         </form>

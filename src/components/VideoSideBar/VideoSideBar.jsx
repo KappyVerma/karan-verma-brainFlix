@@ -10,7 +10,10 @@ function VideoSideBar({ sideBarVideo, bannerVideo }) {
           .filter((vid) => vid.id !== bannerVideo.id)
           .map((vid) => (
             <li className="video-sidebar__item" key={vid.id}>
-              <Link to={`/video/${vid.id}`} className="list">
+              <Link
+                to={`/video/${vid.id}`}
+                className="video-sidebar__container"
+              >
                 <div className="video-sidebar__poster">
                   <img src={vid.image} alt="" className="video-sidebar__link" />
                 </div>

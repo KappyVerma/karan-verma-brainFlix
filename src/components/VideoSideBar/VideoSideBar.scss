@@ -37,6 +37,12 @@
     }
   }
 
+  &__container {
+    display: inline-flex;
+    text-decoration: none;
+    color: $primary-color-black;
+  }
+
   &__link {
     width: 6.25em;
     height: 100%;
@@ -69,10 +75,4 @@
       margin-bottom: auto;
     }
   }
-}
-
-.list {
-  display: inline-flex;
-  text-decoration: none;
-  color: $primary-color-black;
 }

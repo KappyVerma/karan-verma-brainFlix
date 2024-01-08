@@ -13,6 +13,12 @@ $desktop-breakpoint: 1280px;
 
 @font-face {
   font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("Demi.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Avenir";
   src: url("../../assets/Font/AvenirNextLTPro-Regular.otf")
     format("Regular.otf");
   font-weight: 400;
