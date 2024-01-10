@@ -15,7 +15,11 @@ function VideoSideBar({ sideBarVideo, bannerVideo }) {
                 className="video-sidebar__container"
               >
                 <div className="video-sidebar__poster">
-                  <img src={vid.image} alt="" className="video-sidebar__link" />
+                  <img
+                    src={`http://localhost:8080/${vid.image}`}
+                    alt={vid.image}
+                    className="video-sidebar__link"
+                  />
                 </div>
                 <div className="video-sidebar__detail">
                   <h4 className="video-sidebar__title">{vid.title}</h4>

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 import "./VideoUpload.scss";
 
 function VideoUpload(props) {
@@ -8,18 +9,26 @@ function VideoUpload(props) {
 
   const Navigate = useNavigate();
 
-  const eventHandler = (event) => {
-    event.preventDefault();
-    alert("Video uploaded successfully");
-    Navigate("/");
-  };
-
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   };
   const handleDescriptionChange = (event) => {
     setDescription(event.target.value);
   };
+
+  async function eventHandler(event) {
+    event.preventDefault();
+    try {
+      await axios.post(`${props.url}/videos`, {
+        title: title,
+        description: description,
+      });
+      alert("Video uploaded successfully");
+      Navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <>

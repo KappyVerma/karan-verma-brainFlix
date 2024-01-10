@@ -95,11 +95,10 @@
     &::placeholder {
       color: $primary-color-black;
       @include body-footer;
-      font-weight: 500;
+      font-weight: 400;
 
       @include tablet {
         font-size: 0.91rem;
-        font-weight: 500;
       }
     }
   }
@@ -119,11 +118,10 @@
     &::placeholder {
       color: $primary-color-black;
       @include body-footer;
-      font-weight: 500;
+      font-weight: 400;
 
       @include tablet {
         font-size: 0.91rem;
-        font-weight: 500;
       }
     }
   }

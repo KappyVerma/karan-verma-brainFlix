@@ -44,11 +44,13 @@
   }
 
   &__link {
+    font-size: 0.85rem;
     width: 6.25em;
     height: 100%;
     border-radius: 4px;
     object-position: center;
     object-fit: cover;
+    background-color: $secondary-color-mercury;
 
     @include tablet {
       width: 7em;
