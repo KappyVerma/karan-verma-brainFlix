@@ -63,7 +63,11 @@ function HomePage({ url }) {
             avatar={avatar}
           />
         </div>
-        <VideoSideBar sideBarVideo={sideBarVideo} bannerVideo={bannerVideo} />
+        <VideoSideBar
+          sideBarVideo={sideBarVideo}
+          bannerVideo={bannerVideo}
+          url={url}
+        />
       </main>
     </div>
   );

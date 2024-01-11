@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "./VideoSideBar.scss";
 
-function VideoSideBar({ sideBarVideo, bannerVideo }) {
+function VideoSideBar({ sideBarVideo, bannerVideo, url }) {
+  const sortedVideo = sideBarVideo.sort((a, b) => b.timestamp - a.timestamp);
   return (
     <div className="video-sidebar">
       <h3 className="video-sidebar__header">NEXT VIDEOS</h3>
       <ul className="video-sidebar__list">
-        {sideBarVideo
+        {sortedVideo
           .filter((vid) => vid.id !== bannerVideo.id)
           .map((vid) => (
             <li className="video-sidebar__item" key={vid.id}>
@@ -16,7 +17,7 @@ function VideoSideBar({ sideBarVideo, bannerVideo }) {
               >
                 <div className="video-sidebar__poster">
                   <img
-                    src={`http://localhost:8080/${vid.image}`}
+                    src={`${url}/${vid.image}`}
                     alt={vid.image}
                     className="video-sidebar__link"
                   />
