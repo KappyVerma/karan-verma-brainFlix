@@ -86,6 +86,11 @@
     border-radius: 4px;
     background-color: $secondary-color-alabaster;
 
+    &:focus {
+      outline: none;
+      border: 1px solid $primary-color-black;
+    }
+
     @include tablet {
       height: 2.5rem;
       margin-right: auto;
@@ -114,6 +119,11 @@
     border: 1px solid $secondary-color-mercury;
     border-radius: 4px;
     color: $primary-color-black;
+
+    &:focus {
+      outline: none;
+      border: 1px solid $primary-color-black;
+    }
 
     &::placeholder {
       color: $primary-color-black;
