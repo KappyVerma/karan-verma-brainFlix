@@ -13,10 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage url={url} />} />
         <Route path="/video/:id" element={<HomePage url={url} />} />
-        <Route
-          path="/videoUpload"
-          element={<VideoUpload url={url} avatar={avatar} />}
-        />
+        <Route path="/videoUpload" element={<VideoUpload url={url} />} />
       </Routes>
     </BrowserRouter>
   );
